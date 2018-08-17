@@ -8,6 +8,7 @@ import { ListPage } from '../pages/list/list';
 import {CadastroPage} from '../pages/cadastro/cadastro';
 import {MeuPerfilPage} from '../pages/meu-perfil/meu-perfil';
 import {RankingPage} from '../pages/ranking/ranking';
+import {InformativoPage} from '../pages/informativo/informativo';
 @Component({
   templateUrl: 'app.html'
 })
@@ -25,7 +26,8 @@ export class MyApp {
     this.pages = [
       {title: "Cadastro" , component:CadastroPage},
       {title: "Meu Perfil" , component:MeuPerfilPage},
-      {title: "Ranking" , component:RankingPage}
+      {title: "Ranking" , component:RankingPage},
+      {title: "Informativo" , component:InformativoPage}
     ];
 
   }
