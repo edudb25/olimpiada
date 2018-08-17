@@ -9,6 +9,7 @@ import {CadastroPage} from '../pages/cadastro/cadastro';
 import {MeuPerfilPage} from '../pages/meu-perfil/meu-perfil';
 import {RankingPage} from '../pages/ranking/ranking';
 import {InformativoPage} from '../pages/informativo/informativo';
+import {ConsumoPage} from '../pages/consumo/consumo';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,7 +22,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CadastroPage,
     MeuPerfilPage,
     RankingPage,
-    InformativoPage
+    InformativoPage,
+    ConsumoPage
     
   ],
   imports: [
@@ -36,7 +38,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CadastroPage,
     MeuPerfilPage,
     RankingPage,
-    InformativoPage 
+    InformativoPage,
+    ConsumoPage
   ],
   providers: [
     StatusBar,
