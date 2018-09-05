@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the CadastroPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-cadastro',
@@ -19,7 +12,15 @@ export class CadastroPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastroPage');
+    /*
+    var pessoa  = 'Daniel'; //String 
+    var idade   = 33;// Inteiro or numeric
+    var fumante  = true;// booleano 
+    var valorNaConta = 452.65;// float 
+    */
+    var objeto = {pessoa:'Daniel',idade:33,fumante:false,valorNaConta:456.98};
+
+    console.log(objeto);
   }
 
 }
