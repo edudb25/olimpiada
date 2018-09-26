@@ -1,0 +1,23 @@
+{
+    "Escolas":[
+        {
+            "Identificador":1,
+            "Nome": "Colégio Marista Pio XII",
+            "Quant. Turmas": 50,
+            "quant. Salas": 50
+        },
+
+        {
+            "Identificador": 2,
+            "Nome":"Colégio do Amparo",
+            "quant. Salas":50,
+            "Quant. Turmas":50
+        },
+        {
+            "Identificador": 3,
+            "Nome": "Oliveiros",
+            "quant. Salas":50,
+            "Quant. Turmas":50
+        }
+    ]
+}
