@@ -18,6 +18,12 @@
             "Nome": "Oliveiros",
             "quant. Salas":50,
             "Quant. Turmas":50
+        },
+        { 
+            "Identificador": 4,
+            "Nome":"Santa Rita",
+            "quant. Salas": 50,
+            "Quant. Turmas":50
         }
     ]
 }

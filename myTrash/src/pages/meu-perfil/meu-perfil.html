@@ -31,5 +31,10 @@
 </ion-content>
 
 <ion-content padding>
-  Pai de Carlos: Foi comprar cigarro
+  <ion-item>Lista de Posts</ion-item>
+  <ion-item *ngFor="let pessoa of pessoas">
+   <ion-item>Número: {{pessoa.id }} </ion-item>
+   <ion-item>Titulo: {{pessoa.title }} </ion-item>
+   <p>{{ pessoa.body }}</p>
+  </ion-item>
 </ion-content>
