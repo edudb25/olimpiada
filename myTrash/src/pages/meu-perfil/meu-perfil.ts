@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
 
 /**
  * Generated class for the MeuPerfilPage page.
@@ -25,11 +25,12 @@ export class MeuPerfilPage {
    }
 
   ionViewDidLoad() {
-    this.httpClient.get('https://jsonplaceholder.typicode.com/posts').subscribe(result => this.pessoas=result)
-
-     
+    var headers = new HttpHeaders();
+    headers.append("Access-Control-Allow-Origin", '*');
+    
+         
+    //this.httpClient.get('https://jsonplaceholder.typicode.com/posts').subscribe(result => this.pessoas=result);
+    this.httpClient.get('http://10.32.128.54/olimpiada/server', {headers:headers}).subscribe(result => this.pessoas=result);
   }
-
-
 
 }

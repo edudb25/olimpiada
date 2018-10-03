@@ -12,9 +12,11 @@ import {MeuPerfilPage} from '../pages/meu-perfil/meu-perfil';
 import {RankingPage} from '../pages/ranking/ranking';
 import {InformativoPage} from '../pages/informativo/informativo';
 import {ConsumoPage} from '../pages/consumo/consumo';
+import {LoginPage} from '../pages/login/login'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { RequestProvider } from '../providers/request/request';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MeuPerfilPage,
     RankingPage,
     InformativoPage,
-    ConsumoPage
+    ConsumoPage,
+    LoginPage
     
   ],
   imports: [
@@ -42,12 +45,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MeuPerfilPage,
     RankingPage,
     InformativoPage,
-    ConsumoPage
+    ConsumoPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RequestProvider
   ]
 })
 export class AppModule {}
