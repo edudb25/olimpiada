@@ -52,7 +52,7 @@ import { RequestProvider } from '../providers/request/request';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RequestProvider
+    RequestProvider,
   ]
 })
 export class AppModule {}
