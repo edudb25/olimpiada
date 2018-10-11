@@ -14,7 +14,13 @@
 
 
 <ion-content padding>
-  <ion-item>
+
+   <ion-item> 
+     <ion-img width="400" height="337" src="../../assets/imgs/logo-mytrash.png"></ion-img> 
+    </ion-item>
+
+
+   <ion-item>
     <ion-label color="primary">Usuário</ion-label>
     <ion-input type="text" placeholder="Usuário"></ion-input>
   </ion-item>
@@ -24,18 +30,19 @@
     <ion-input type="password" placeholder="Sua senha"></ion-input>
   </ion-item>
 
-  <ion-item>
-    <button block ion-button>
-      <ion-icon name="log-in"></ion-icon>    ENTRAR
-
-    </button>
-  </ion-item>
-
-  <ion-item>
-    <button block ion-button>
-      <ion-icon name="person-add"></ion-icon>    CADASTRE-SE
-
-    </button>
-  </ion-item>
+  <ion-col align-self: flex-start>
+    <ion-item >
+        <button block ion-button>
+          <ion-icon name="log-in"></ion-icon>    ENTRAR
+        </button>
+    </ion-item>
+  </ion-col>
   
+  <ion-col align-self: flex-start>
+    <ion-item>
+          <button block ion-button>
+            <ion-icon name="person-add"></ion-icon>    CADASTRE-SE
+          </button> 
+    </ion-item>  
+  </ion-col>
 </ion-content>
