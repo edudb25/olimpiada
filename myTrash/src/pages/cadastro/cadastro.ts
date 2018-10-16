@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
 
 @IonicPage()
 @Component({
@@ -26,9 +27,12 @@ export class CadastroPage {
 
   pessoa:any = {}; 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              private toastCtrl: ToastController,
+              private http: HttpClient) {
   }
-presentToast() {
+  presentToast() {
   let toast = this.toastCtrl.create({
     message: 'Preencha o formulário corretamente',
     duration: 3000,
@@ -47,6 +51,15 @@ presentToast() {
   ionViewDidLoad() {
   }
   salvar() {
-    this.presentToast();
+    if( this.pessoa.hasOwnProperty('nome') && 
+        this.pessoa.hasOwnProperty('serie') &&
+        this.pessoa.hasOwnProperty('email') && 
+        this.pessoa.hasOwnProperty('senha')) {
+          this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe( jegue => {
+              console.log(jegue);
+          });
+    }else{
+      this.presentToast();
+    }
   }
 }
