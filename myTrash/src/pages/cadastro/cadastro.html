@@ -14,67 +14,42 @@
         <ion-title>
           Cadastro
         </ion-title>
-    
-        <ion-buttons end>
-          <button ion-button icon-only (click)="openModal()">
-            <ion-icon name="options"></ion-icon>
-          </button>
-        </ion-buttons>
       </ion-navbar>
     
     </ion-header>
 
 
 <ion-content padding>
+  <form (ngSubmit)="salvar()">
   <ion-item>
     <ion-label color="primary">Nome</ion-label>
-    <ion-input type="text" placeholder="Seu nome..."></ion-input>
+    <ion-input type="text" [(ngModel)]="pessoa.nome" name="nome" placeholder="Seu nome..."></ion-input>
   </ion-item>
             
   <ion-item>
     <ion-label>Série</ion-label>
-    <ion-select [(ngModel)]="gender">
-     
-      <ion-option value="EF6">6º Ano Ensino Fundamental</ion-option>
-      <ion-option value="EF7">7º Ano Ensino Fundamental</ion-option>
-      <ion-option value="EF8">8º Ano Ensino Fundamental</ion-option>
-      <ion-option value="EF9">9º Ano Ensino Fundamental</ion-option>
-      <ion-option value="EM1">1º Ano Ensino Médio</ion-option>
-      <ion-option value="EM2">2º Ano Ensino Médio</ion-option>
-      <ion-option value="EM3">3º Ano Ensino Médio</ion-option>
-      
-    </ion-select>
-  </ion-item>
-  
-  <ion-item>
-    <ion-label>Turma</ion-label>
-    <ion-select [(ngModel)]="gender">
-     
-      <ion-option value="TA">Turma A</ion-option>
-      <ion-option value="TB">Turma B</ion-option>
-       
+    <ion-select [(ngModel)]="pessoa.serie" name="serie">
+      <ion-option *ngFor="let serie of series" [value]="serie.id">{{ serie.serie }} {{ serie.turma}}  </ion-option>
     </ion-select>
   </ion-item>
 
     <ion-item>
       <ion-label color="primary">E-mail</ion-label>
-      <ion-input type="email" placeholder="Seu email..."></ion-input>
+      <ion-input type="email" [(ngModel)]="pessoa.email" name="email" placeholder="Seu email..."></ion-input>
     </ion-item>
 
       <ion-item>
           <ion-label color="primary">Senha</ion-label>
-          <ion-input type="password" placeholder="Sua senha..."></ion-input>
+          <ion-input type="password" [(ngModel)]="pessoa.senha" name="senha" placeholder="Sua senha..."></ion-input>
         </ion-item>
 
         <ion-item>
-          <button block ion-button>
+          <button block ion-button type="submit">
             <ion-icon name="person-add"></ion-icon>    Cadastrar
 
           </button>
         </ion-item>
-        
-        
-       
+      </form>
 </ion-content>
 
 

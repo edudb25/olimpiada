@@ -32,5 +32,4 @@ export class MeuPerfilPage {
     //this.httpClient.get('https://jsonplaceholder.typicode.com/posts').subscribe(result => this.pessoas=result);
     this.httpClient.get('http://10.32.128.54/olimpiada/server', {headers:headers}).subscribe(result => this.pessoas=result);
   }
-
 }
