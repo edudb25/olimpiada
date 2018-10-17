@@ -15,6 +15,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ConsumoPage {
 
+residuos: any = [
+{id: 1, residuo: 'Plástico'},
+{id: 2, residuo: 'Garrafa Pet'},
+{id: 3, residuo: 'Lata de alumínio'},
+{id: 4, residuo: 'Papel'},
+{id: 5, residuo: 'Vidro'}
+];
+
+consumo: any = {};
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

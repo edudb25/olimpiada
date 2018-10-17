@@ -22,7 +22,8 @@ export class CadastroPage {
     { id: 10, serie:'6º ano', turma: 'B'},
     { id: 11, serie:'7º ano', turma: 'B'},
     { id: 12, serie:'8º ano', turma: 'B'},
-    { id: 13, serie:'9º ano', turma: 'B'}
+    { id: 13, serie:'9º ano', turma: 'B'},
+    { id: 14, serie:'Outros', turma:''}
   ];
 
   pessoa:any = {}; 
@@ -34,7 +35,7 @@ export class CadastroPage {
   }
   presentToast() {
   let toast = this.toastCtrl.create({
-    message: 'Preencha o formulário corretamente',
+    message: 'Preencha o formulário corretamente!',
     duration: 3000,
     position: 'middle'
 
@@ -55,7 +56,7 @@ export class CadastroPage {
         this.pessoa.hasOwnProperty('serie') &&
         this.pessoa.hasOwnProperty('email') && 
         this.pessoa.hasOwnProperty('senha')) {
-          this.http.get('https://jsonplaceholder.typicode.com/posts').subscribe( jegue => {
+          this.http.post('https://mytrash.com.br/pessoa/', this.pessoa).subscribe( jegue => {
               console.log(jegue);
           });
     }else{

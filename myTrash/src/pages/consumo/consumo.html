@@ -24,35 +24,24 @@
 
 
 <ion-content padding>
-  <ion-list>
-    <ion-item>
-      <ion-label>Copo de Plástico</ion-label>
-      <ion-checkbox [(ngModel)]="CopodePlastico"></ion-checkbox>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label>Plástico</ion-label>
-      <ion-checkbox [(ngModel)]="Plastico"></ion-checkbox>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label>Garrafa Pet</ion-label>
-      <ion-checkbox [(ngModel)]="GarrafaPet"></ion-checkbox>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label>Latinha de Refrigerante</ion-label>
-      <ion-checkbox [(ngModel)]="LatinhadeRefrigerante"></ion-checkbox>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label>Papel</ion-label>
-      <ion-checkbox [(ngModel)]="Papel"></ion-checkbox>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label>Canudo de plástico</ion-label>
-      <ion-checkbox [(ngModel)]="Canudodeplastico"></ion-checkbox>
-    </ion-item>          
-    </ion-list>
+  <form>
+  <ion-item>    
+    <ion-label>Residuos</ion-label>
+    <ion-select name="residuo">
+      <ion-option *ngFor="let residuo of residuos" [value]="residuo.id"> {{residuo.residuo}} </ion-option>
+    </ion-select>
+  </ion-item>
+</form>
+
+<ion-item>
+  <ion-label color="primary">Quantidade</ion-label>
+  <ion-input type="text" name="quantidade" placeholder=""></ion-input>
+</ion-item>
+
+<ion-item>
+  <button block ion-button type="submit">
+    <ion-icon name="add"></ion-icon>    Adicionar
+  </button>
+</ion-item>
+
 </ion-content>
