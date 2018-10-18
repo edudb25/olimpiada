@@ -55,9 +55,19 @@ export class CadastroPage {
     if( this.pessoa.hasOwnProperty('nome') && 
         this.pessoa.hasOwnProperty('serie') &&
         this.pessoa.hasOwnProperty('email') && 
-        this.pessoa.hasOwnProperty('senha')) {
-          this.http.post('https://mytrash.com.br/pessoa/', this.pessoa).subscribe( jegue => {
-              console.log(jegue);
+        this.pessoa.hasOwnProperty('senha') &&
+        this.pessoa.hasOwnProperty('dtnascimento')) {
+        console.log(this.pessoa);  
+          this.http.post('http://mytrash.com.br/app/?tipo=cadastro', this.pessoa,  {
+            headers:
+            {
+                'Access-Control-Allow-Origin':'*',
+                'Access-Control-Allow-Methods':'POST, GET, OPTIONS, PUT',
+                'Content-Type':'application/json',
+                'Accept':'application/json'
+            }
+        }).subscribe(retorno => {
+              console.log(retorno);
           });
     }else{
       this.presentToast();

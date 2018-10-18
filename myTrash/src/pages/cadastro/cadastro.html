@@ -25,6 +25,11 @@
     <ion-label color="primary">Nome</ion-label>
     <ion-input type="text" [(ngModel)]="pessoa.nome" name="nome" placeholder="Seu nome..."></ion-input>
   </ion-item>
+
+  <ion-item>
+    <ion-label color="primary">Data de nascimento</ion-label>
+    <ion-input type="date" [(ngModel)]="pessoa.dtnascimento" name="dtnascimento" placeholder="DD/MM/AAAA"></ion-input>
+  </ion-item>
             
   <ion-item>
     <ion-label>Série</ion-label>
@@ -41,7 +46,7 @@
       <ion-item>
           <ion-label color="primary">Senha</ion-label>
           <ion-input type="password" [(ngModel)]="pessoa.senha" name="senha" placeholder="Sua senha..."></ion-input>
-        </ion-item>
+      </ion-item>
 
         <ion-item>
           <button block ion-button type="submit">
@@ -49,8 +54,6 @@
 
           </button>
         </ion-item>
+
       </form>
 </ion-content>
-
-
-

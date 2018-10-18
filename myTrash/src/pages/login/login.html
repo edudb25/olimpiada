@@ -14,25 +14,24 @@
 
 
 <ion-content padding>
-
-   <ion-item> 
+<form (ngSubmit)="logar()">
+  <ion-item> 
      <ion-img width="400" height="337" src="../../assets/imgs/logo-mytrash.png"></ion-img> 
-    </ion-item>
+  </ion-item>
 
-
-   <ion-item>
+  <ion-item>
     <ion-label color="primary">Usuário</ion-label>
-    <ion-input type="text" placeholder="Usuário"></ion-input>
+    <ion-input type="text" [(ngModel)]="login.usuario" name="usuario" placeholder="Usuário"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label color="primary">Senha</ion-label>
-    <ion-input type="password" placeholder="Sua senha"></ion-input>
+    <ion-input type="password" [(ngModel)]="login.senha" name="senha" placeholder="Sua senha"></ion-input>
   </ion-item>
 
   <ion-col align-self: flex-start>
     <ion-item >
-        <button block ion-button>
+        <button block ion-button type="submit">
           <ion-icon name="log-in"></ion-icon>    ENTRAR
         </button>
     </ion-item>
@@ -46,4 +45,5 @@
       </button> 
     </ion-item>  
   </ion-col>
+</form>
 </ion-content>

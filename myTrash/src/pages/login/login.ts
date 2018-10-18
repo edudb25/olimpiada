@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { CadastroPage } from '../cadastro/cadastro';
+import {HttpClient, HttpHeaders } from '@angular/common/http';
 /**
  * Generated class for the LoginPage page.
  *
@@ -14,13 +15,32 @@ import { CadastroPage } from '../cadastro/cadastro';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  login:any = {};
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private toastCtrl: ToastController,
+              private http: HttpClient) {
   }
-
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'Informe usuário e senha antes de se conectar!',
+      duration: 3000,
+      position: 'middle'
+    });
+  toast.present();
+  }
   goCadastro(){
-     console.log('cara de tanga');
+
      this.navCtrl.push(CadastroPage);
   }
 
+  logar(){
+    if(this.login.hasOwnProperty('usuario'),
+       this.login.hasOwnProperty('senha')){
+
+    }else{
+      this.presentToast();
+    }
+  }
+    
 }

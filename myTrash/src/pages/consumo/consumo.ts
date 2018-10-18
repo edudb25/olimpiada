@@ -23,7 +23,7 @@ residuos: any = [
 {id: 5, residuo: 'Vidro'}
 ];
 
-consumo: any = {};
+consumo: any = {};    
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
