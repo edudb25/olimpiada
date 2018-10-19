@@ -9,22 +9,9 @@ import { LoginPage } from '../login/login';
   templateUrl: 'cadastro.html',
 })
 export class CadastroPage {
-
-  series: any = [
-    { id: 1, serie:'1º ano', turma: 'A'},
-    { id: 2, serie:'2º ano', turma: 'A'},
-    { id: 3, serie:'3º ano', turma: 'A'},
-    { id: 4, serie:'6º ano', turma: 'A'},
-    { id: 5, serie:'7º ano', turma: 'A'},
-    { id: 6, serie:'8º ano', turma: 'A'},
-    { id: 7, serie:'9º ano', turma: 'A'},
-    { id: 8, serie:'1º ano', turma: 'B'},
-    { id: 9, serie:'3º ano', turma: 'B'},
-    { id: 10, serie:'6º ano', turma: 'B'},
-    { id: 11, serie:'7º ano', turma: 'B'},
-    { id: 12, serie:'8º ano', turma: 'B'},
-    { id: 13, serie:'9º ano', turma: 'B'},
-    { id: 14, serie:'Outros', turma:''}
+  
+  turmas: any = [
+    { id: null, nome:'carregando', serie: null}
   ];
 
   pessoa:any = {}; 
@@ -33,6 +20,11 @@ export class CadastroPage {
               public navParams: NavParams, 
               private toastCtrl: ToastController,
               private http: HttpClient) {
+
+                http.get('http://mytrash.com.br/app/?tipo=listarseries').subscribe(retorno => {
+                    this.turmas = retorno;
+                });
+                 
   }
   presentToast(mensagem, position) {
   let toast = this.toastCtrl.create({

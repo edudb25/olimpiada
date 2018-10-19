@@ -6,12 +6,13 @@
 -->
 <ion-header>
     
-      <ion-navbar>
+      <ion-navbar color = "primary">
         <button ion-button icon-only menuToggle>
           <ion-icon name="menu"></ion-icon>
         </button>
     
-        <ion-title>
+        <ion-title>  
+            <ion-icon name="add"></ion-icon>
           Cadastro
         </ion-title>
       </ion-navbar>
@@ -34,7 +35,7 @@
   <ion-item>
     <ion-label>Série</ion-label>
     <ion-select [(ngModel)]="pessoa.serie" name="serie">
-      <ion-option *ngFor="let serie of series" [value]="serie.id">{{ serie.serie }} {{ serie.turma}}  </ion-option>
+      <ion-option *ngFor="let turma of turmas" [value]="turma.id">{{ turma.serie }} {{ turma.nome }}  </ion-option>
     </ion-select>
   </ion-item>
 
