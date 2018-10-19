@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { CadastroPage } from '../cadastro/cadastro';
-import {HttpClient, HttpHeaders } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 /**
  * Generated class for the LoginPage page.
  *
@@ -35,7 +35,7 @@ export class LoginPage {
   }
 
   logar(){
-    if(this.login.hasOwnProperty('usuario'),
+    if(this.login.hasOwnProperty('usuario') &&
        this.login.hasOwnProperty('senha')){
 
     }else{

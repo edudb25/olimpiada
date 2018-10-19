@@ -12,7 +12,8 @@ import {MeuPerfilPage} from '../pages/meu-perfil/meu-perfil';
 import {RankingPage} from '../pages/ranking/ranking';
 import {InformativoPage} from '../pages/informativo/informativo';
 import {ConsumoPage} from '../pages/consumo/consumo';
-import {LoginPage} from '../pages/login/login'
+import {LoginPage} from '../pages/login/login';
+import {QuemSomosPage} from '../pages/quem-somos/quem-somos'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,7 +29,8 @@ import { RequestProvider } from '../providers/request/request';
     RankingPage,
     InformativoPage,
     ConsumoPage,
-    LoginPage
+    LoginPage,
+    QuemSomosPage
     
   ],
   imports: [
@@ -46,7 +48,8 @@ import { RequestProvider } from '../providers/request/request';
     RankingPage,
     InformativoPage,
     ConsumoPage,
-    LoginPage
+    LoginPage,
+    QuemSomosPage
   ],
   providers: [
     StatusBar,

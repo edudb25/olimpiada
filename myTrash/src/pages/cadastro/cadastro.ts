@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
+import { LoginPage } from '../login/login';
 
 @IonicPage()
 @Component({
@@ -33,11 +34,11 @@ export class CadastroPage {
               private toastCtrl: ToastController,
               private http: HttpClient) {
   }
-  presentToast() {
+  presentToast(mensagem, position) {
   let toast = this.toastCtrl.create({
-    message: 'Preencha o formulário corretamente!',
+    message: mensagem,
     duration: 3000,
-    position: 'middle'
+    position: position
 
   });
 
@@ -66,11 +67,15 @@ export class CadastroPage {
                 'Content-Type':'application/json',
                 'Accept':'application/json'
             }
-        }).subscribe(retorno => {
+        }).subscribe((retorno:any) => {
               console.log(retorno);
+              if( retorno.ok ){
+                this.presentToast('Cadastro realizado com sucesso!', 'top');
+                this.navCtrl.push(LoginPage);
+              }
           });
     }else{
-      this.presentToast();
+      this.presentToast('Preencha o formulário corretamente!', 'middle');
     }
   }
 }
