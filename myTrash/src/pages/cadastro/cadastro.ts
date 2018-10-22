@@ -64,6 +64,8 @@ export class CadastroPage {
               if( retorno.ok ){
                 this.presentToast('Cadastro realizado com sucesso!', 'top');
                 this.navCtrl.push(LoginPage);
+              }else if(retorno[0].indexOf('Duplicate entry')){
+                this.presentToast('O email já está em uso', 'middle');
               }
           });
     }else{

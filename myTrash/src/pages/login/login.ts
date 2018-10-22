@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { CadastroPage } from '../cadastro/cadastro';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { HomePage } from '../home/home';
 /**
  * Generated class for the LoginPage page.
  *
@@ -21,25 +22,44 @@ export class LoginPage {
               private toastCtrl: ToastController,
               private http: HttpClient) {
   }
-  presentToast() {
+  presentToast( mensagem, position ) {
     let toast = this.toastCtrl.create({
-      message: 'Informe usuário e senha antes de se conectar!',
+      message: mensagem,
       duration: 3000,
-      position: 'middle'
+      position: position
     });
   toast.present();
   }
   goCadastro(){
-
      this.navCtrl.push(CadastroPage);
   }
 
   logar(){
-    if(this.login.hasOwnProperty('usuario') &&
+    console.log(this.login);
+    if(this.login.hasOwnProperty('email') &&
        this.login.hasOwnProperty('senha')){
+        this.http.post('http://mytrash.com.br/app/?tipo=login', this.login, {
+          headers:
+          {
+            'Access-Control-Allow-Origin':'*',
+            'Access-Control-Allow-Methods':'POST, GET, OPTIONS, PUT',
+            'Content-Type':'application/json',
+            'Accept':'application/json'
+          }
+        }).subscribe((retorno:any) => {
+          console.log(retorno);
 
+          if(retorno.hasOwnProperty('msg')){
+            this.presentToast(retorno.msg, 'middle'); 
+          } else if(retorno[0].id>0){
+
+            this.presentToast('Login efetuado com sucesso!', 'middle');
+            this.navCtrl.setRoot(HomePage);
+          }
+           console.log(retorno)         
+        });
     }else{
-      this.presentToast();
+      this.presentToast('Preencha usuário e senha corretamente!', 'middle');
     }
   }
     

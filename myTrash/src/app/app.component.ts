@@ -19,7 +19,7 @@ import {QuemSomosPage} from '../pages/quem-somos/quem-somos'
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage
+  rootPage: any = LoginPage
 
   pages: Array<{title: string, component: any}>;
 
@@ -33,7 +33,7 @@ export class MyApp {
       {title: "Ranking" , component:RankingPage},
       {title: "Informativo" , component:InformativoPage},
       {title: "Consumo" , component:ConsumoPage},
-      {title: "Login" , component:LoginPage},
+      //{title: "Login" , component:LoginPage},
       {title: "Quem Somos" , component:QuemSomosPage}
     ];
 

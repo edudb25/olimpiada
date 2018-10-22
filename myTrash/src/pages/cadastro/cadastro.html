@@ -29,13 +29,14 @@
 
   <ion-item>
     <ion-label color="primary">Data de nascimento</ion-label>
-    <ion-input type="date" [(ngModel)]="pessoa.dtnascimento" name="dtnascimento" placeholder="DD/MM/AAAA"></ion-input>
+    <!-- <ion-input type="date" [(ngModel)]="pessoa.dtnascimento" name="dtnascimento" placeholder="DD/MM/AAAA"></ion-input> -->
+    <ion-datetime name="dtnascimento" displayFormat="DD/MM/YYYY" [(ngModel)]="pessoa.dtnascimento"></ion-datetime>
   </ion-item>
             
   <ion-item>
     <ion-label>Série</ion-label>
     <ion-select [(ngModel)]="pessoa.serie" name="serie">
-      <ion-option *ngFor="let turma of turmas" [value]="turma.id">{{ turma.serie }} {{ turma.nome }}  </ion-option>
+      <ion-option *ngFor="let turma of turmas" [value]="turma.id">{{ turma.serie }}. Turma: {{ turma.nome }}  </ion-option>
     </ion-select>
   </ion-item>
 

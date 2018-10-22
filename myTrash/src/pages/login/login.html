@@ -19,12 +19,12 @@
 <ion-content padding>
 <form (ngSubmit)="logar()">
   <ion-item> 
-     <ion-img width="400" height="337" src="../../assets/imgs/logo-mytrash.png"></ion-img> 
+     <img src="../../assets/imgs/nova-logo.png" /> 
   </ion-item>
 
   <ion-item>
-    <ion-label color="primary">Usuário</ion-label>
-    <ion-input type="text" [(ngModel)]="login.usuario" name="usuario" placeholder="Usuário"></ion-input>
+    <ion-label color="primary">Email</ion-label>
+    <ion-input type="text" [(ngModel)]="login.email" name="email" placeholder="email@provedor"></ion-input>
   </ion-item>
 
   <ion-item>
@@ -42,7 +42,7 @@
       </ion-col>
 
       <ion-col col-6>
-        <button block ion-button (click)="goCadastro()">
+        <button type="button" block ion-button (click)="goCadastro()">
           <ion-icon name="person-add"></ion-icon>  
             CADASTRE-SE
         </button> 
