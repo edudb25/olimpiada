@@ -17,10 +17,9 @@ export class ConsumoPage {
 
 residuos: any = [
 {id: 1, residuo: 'Plástico'},
-{id: 2, residuo: 'Garrafa Pet'},
-{id: 3, residuo: 'Lata de alumínio'},
-{id: 4, residuo: 'Papel'},
-{id: 5, residuo: 'Vidro'}
+{id: 2, residuo: 'Papel'},
+{id: 3, residuo: 'Metal'},
+{id: 4, residuo: 'Vidro'}
 ];
 
 consumo: any = {};    

@@ -28,13 +28,14 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      {title: "Cadastro" , component:CadastroPage},
+      //{title: "Cadastro" , component:CadastroPage},
       {title: "Meu Perfil" , component:MeuPerfilPage},
-      {title: "Ranking" , component:RankingPage},
+      //{title: "Ranking" , component:RankingPage},
       {title: "Informativo" , component:InformativoPage},
-      {title: "Consumo" , component:ConsumoPage},
+      {title: "Descarte" , component:ConsumoPage},
       //{title: "Login" , component:LoginPage},
-      {title: "Quem Somos" , component:QuemSomosPage}
+      {title: "Quem Somos" , component:QuemSomosPage},
+      {title: "Sair" , component:LoginPage},
     ];
 
   }

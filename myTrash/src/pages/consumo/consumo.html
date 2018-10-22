@@ -12,7 +12,7 @@
 
   <ion-title>
       <ion-icon name="leaf"></ion-icon> 
-  Consumo
+  Informar descarte
   </ion-title>
 
   <ion-buttons end>
@@ -27,7 +27,7 @@
 <ion-content padding>
   <form>
   <ion-item>    
-    <ion-label>Residuos</ion-label>
+    <ion-label>Categoria</ion-label>
     <ion-select name="residuo">
       <ion-option *ngFor="let residuo of residuos" [value]="residuo.id"> {{residuo.residuo}} </ion-option>
     </ion-select>
