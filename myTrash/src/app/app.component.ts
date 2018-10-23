@@ -4,10 +4,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-import {CadastroPage} from '../pages/cadastro/cadastro';
 import {MeuPerfilPage} from '../pages/meu-perfil/meu-perfil';
-import {RankingPage} from '../pages/ranking/ranking';
+//import {RankingPage} from '../pages/ranking/ranking';
 import {InformativoPage} from '../pages/informativo/informativo';
 import {ConsumoPage} from '../pages/consumo/consumo';
 import {LoginPage} from '../pages/login/login';

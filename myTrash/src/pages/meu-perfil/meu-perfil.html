@@ -40,6 +40,13 @@
   <ion-card>
       <ion-card-header>Meus Descartes</ion-card-header>
       <ion-card-content>
+        <ion-card *ngFor="let descarte of descartes">
+          <ion-item>{{ descarte.residuo }}:  {{ descarte.quantidade }} itens</ion-item>
+          <ion-item> 
+              <ion-icon name="trophy"></ion-icon>
+            {{ descarte.pontos }} 
+          </ion-item>
+        </ion-card>
           
       </ion-card-content>
     </ion-card>

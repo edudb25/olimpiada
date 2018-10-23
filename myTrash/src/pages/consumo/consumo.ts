@@ -62,7 +62,6 @@ consumo: any = {};
   salvarConsumo(){
     let pessoa = JSON.parse(localStorage.getItem('usuario'));
     this.consumo.pessoa = pessoa.id;
-
     if( (this.consumo.hasOwnProperty('quantidade') && this.consumo.quantidade !== null) && 
         (this.consumo.hasOwnProperty('residuo') || this.consumo.residuo !== null) ){
       
@@ -82,6 +81,8 @@ consumo: any = {};
             this.consumo.quantidade = null;
           }else{
           }
+        }, (error)=>{
+          console.log(error);
         });
       }else{
         this.presentToast('Informe categoria, resíduo e quantidade antes de adicionar!', 'middle');

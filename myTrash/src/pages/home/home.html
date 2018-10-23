@@ -25,13 +25,19 @@
     </ion-card-header>
 
     <ion-card-content>
-      <ion-item>1º - Informe seu descarte!</ion-item>
+      <ion-item>
+        <ion-icon name="leaf"></ion-icon>
+        Informe seu descarte!</ion-item>
       Toda vez que você jogar numa coleta seletiva um resíduo reciclável: 
       <button ion-button type="button" (click)="goConsumo()">Informe o seu descarte</button>
     </ion-card-content>
 
     <ion-card-content>
-      <ion-item>2º - Confira sua pontução</ion-item>
+      <ion-item>
+          <ion-icon name="md-ribbon"></ion-icon>
+
+        Confira sua pontução
+      </ion-item>
       Cada descarte gera uma pontução que você acompanha em seu <a href="#" (click)="goPerfil()">Perfil</a>. Veja abaixo a pontuação por resíduo:
 
       <ion-item>Guardanapo (PAPEL): <br><b>10 Pontos</b></ion-item>
@@ -43,6 +49,19 @@
       <ion-item>Bolsa (PLÁSTICO): <br><b>85 Pontos</b></ion-item>
       <ion-item>Garrafa PET (PLÁSTICO): <br><b>100 Pontos</b></ion-item>
       
+    </ion-card-content>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-icon name="md-podium"></ion-icon>
+         Ranking!
+      </ion-item>
+        <ion-card>
+
+            Em nosso site: <a href="http://mytrash.com.br/site" target="_blank">myTrash.com.br</a> 
+            Você acompanha o ranking com os usuários mais ativos e as melhores pontuações. 
+            Todos os resíduos informados no myTrash&copy; serão redirecionados para cooperativas de reciclagens.
+        </ion-card>
     </ion-card-content>
 
   </ion-card>
