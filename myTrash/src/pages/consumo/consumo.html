@@ -12,39 +12,48 @@
 
   <ion-title>
       <ion-icon name="leaf"></ion-icon> 
-  Informar descarte
+    Informar descarte
   </ion-title>
 
-  <ion-buttons end>
-    <button ion-button icon-only (click)="openModal()">
-      <ion-icon name="options"></ion-icon>
-    </button>
-    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-  <form>
+  <form (ngSubmit)="salvarConsumo()">
   <ion-item>    
     <ion-label>Categoria</ion-label>
-    <ion-select name="residuo">
-      <ion-option *ngFor="let residuo of residuos" [value]="residuo.id"> {{residuo.residuo}} </ion-option>
+    <ion-select name="categoria" [(ngModel)]="consumo.categoria" (ionChange)="carregarResiduos()">
+      <ion-option *ngFor="let categoria of categorias" [value]="categoria.id"> {{categoria.nome}} </ion-option>
     </ion-select>
   </ion-item>
-</form>
+  
+  
+    <ion-item>    
+      <ion-label>Resíduo</ion-label>
+      <ion-select [(ngModel)]="consumo.residuo" name="resíduo">
+        <ion-option *ngFor="let residuo of residuos" [value]="residuo.id"> {{residuo.nome}} </ion-option>
+      </ion-select>
+    </ion-item>
+  
 
-<ion-item>
-  <ion-label color="primary">Quantidade</ion-label>
-  <ion-input type="text" name="quantidade" placeholder=""></ion-input>
-</ion-item>
+  <ion-item>
+    <ion-label color="primary">Quantidade</ion-label>
+    <ion-input type="text" name="quantidade" [(ngModel)]="consumo.quantidade" placeholder=""></ion-input>
+  </ion-item>
 
-<ion-item>
-  <button block ion-button type="submit">
-    <ion-icon name="add"></ion-icon>    Adicionar
-  </button>
-</ion-item>
+  <ion-item>
+    <button block ion-button type="submit">
+      <ion-icon name="add"></ion-icon>    Adicionar
+    </button>
+  </ion-item>
 
 
-
+  </form>
 </ion-content>
+
+<ion-footer>
+    <ion-toolbar color="primary">
+      <ion-title>myTrash - 2018&copy;</ion-title>
+    </ion-toolbar>
+  </ion-footer>

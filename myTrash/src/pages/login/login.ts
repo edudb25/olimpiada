@@ -54,6 +54,9 @@ export class LoginPage {
           } else if(retorno[0].id>0){
 
             this.presentToast('Login efetuado com sucesso!', 'middle');
+            //Salvando a pessoa na sessão 
+            localStorage.setItem('usuario', JSON.stringify(retorno[0]));
+
             this.navCtrl.setRoot(HomePage);
           }
            console.log(retorno)         

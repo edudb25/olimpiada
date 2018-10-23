@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
-import { HttpClient, HttpHeaders  } from '@angular/common/http';
+import { HttpClient  } from '@angular/common/http';
 import { LoginPage } from '../login/login';
 
 @IonicPage()
@@ -45,10 +45,10 @@ export class CadastroPage {
   ionViewDidLoad() {
   }
   salvar() {
-    if( this.pessoa.hasOwnProperty('nome') && 
-        this.pessoa.hasOwnProperty('serie') &&
-        this.pessoa.hasOwnProperty('email') && 
-        this.pessoa.hasOwnProperty('senha') &&
+    if( this.pessoa.hasOwnProperty('nome') &&  
+        this.pessoa.hasOwnProperty('serie') && 
+        this.pessoa.hasOwnProperty('email') &&  
+        this.pessoa.hasOwnProperty('senha') && 
         this.pessoa.hasOwnProperty('dtnascimento')) {
         console.log(this.pessoa);  
           this.http.post('http://mytrash.com.br/app/?tipo=cadastro', this.pessoa,  {

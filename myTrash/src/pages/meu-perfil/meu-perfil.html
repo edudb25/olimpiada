@@ -27,10 +27,27 @@
 </ion-content>
 
 <ion-content padding>
-  <ion-item>Lista de Posts</ion-item>
-  <ion-item *ngFor="let pessoa of pessoas">
-   <ion-item>Número: {{pessoa.id }} </ion-item>
-   <ion-item>Titulo: {{pessoa.title }} </ion-item>
-   <p>{{ pessoa.body }}</p>
-  </ion-item>
+  <ion-card>
+    <ion-card-header>Dados pessoais</ion-card-header>
+    <ion-card-content>
+        <ion-item>Nome: <b> {{ pessoa.nome }} </b></ion-item>
+        <ion-item>Data de nascimento: <b> {{ pessoa.nascimento | date:'dd/MM/yyyy' }} </b></ion-item>
+        <ion-item>Email: <b> {{ pessoa.email }} </b></ion-item>
+        <ion-item>Série: <b> {{ pessoa.serie}} {{ pessoa.turma }}</b></ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+      <ion-card-header>Meus Descartes</ion-card-header>
+      <ion-card-content>
+          
+      </ion-card-content>
+    </ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title>myTrash - 2018&copy;</ion-title>
+  </ion-toolbar>
+</ion-footer>
+  

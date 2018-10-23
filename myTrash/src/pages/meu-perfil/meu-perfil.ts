@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { HttpClient, HttpHeaders  } from '@angular/common/http';
+import { HttpClient  } from '@angular/common/http';
 
 /**
  * Generated class for the MeuPerfilPage page.
@@ -17,19 +17,20 @@ import { HttpClient, HttpHeaders  } from '@angular/common/http';
 })
 export class MeuPerfilPage {
 
-  pessoa:any = {nome:"Eduardo"};
+  pessoa:any = {};
 
-  pessoas: any
-   constructor(public navCtrl: NavController, public httpClient: HttpClient) { 
-    
-   }
+  constructor(public navCtrl: NavController, public http: HttpClient) { 
+    this.pessoa = JSON.parse(localStorage.getItem('usuario'));
+    let url = 'http://mytrash.com.br/?tipo=listarconsumo&pessoa_id='+this.pessoa.id; 
+    http.get(url).subscribe( retorno => {
+      console.log(retorno);
+    });
+  }
 
   ionViewDidLoad() {
-    var headers = new HttpHeaders();
-    headers.append("Access-Control-Allow-Origin", '*');
     
-         
-    //this.httpClient.get('https://jsonplaceholder.typicode.com/posts').subscribe(result => this.pessoas=result);
-    this.httpClient.get('http://10.32.128.54/olimpiada/server', {headers:headers}).subscribe(result => this.pessoas=result);
   }
+
+
+
 }
